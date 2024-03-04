@@ -1,0 +1,16 @@
+digraph G {
+node [shape=record];
+rankdir=LR;
+subgraph cluster_maximo {
+label = "Heap Máximo";
+node_maximo0 [label="PID: 6 | Prioridade: 7 | Tempo de Espera: 8"];
+node_maximo1 [label="PID: 5 | Prioridade: 5 | Tempo de Espera: 3"];
+node_maximo0 -> node_maximo1;
+}
+subgraph cluster_minimo {
+label = "Heap Mínimo";
+node_minimo0 [label="PID: 5 | Prioridade: 5 | Tempo de Espera: 3"];
+node_minimo1 [label="PID: 6 | Prioridade: 7 | Tempo de Espera: 8"];
+node_minimo0 -> node_minimo1;
+}
+}

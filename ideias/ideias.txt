@@ -1,0 +1,45 @@
+Estrutura de Dados Heap:
+Um heap é uma árvore especializada utilizada em estruturas de dados.
+Ele consiste em nós, onde o nó superior é chamado de raiz (pai).
+Os filhos da raiz são organizados: o primeiro filho é o filho esquerdo e o segundo filho é o filho direito.
+Os nós subsequentes são preenchidos da esquerda para a direita.
+Cada nó possui uma chave exclusiva para identificação.
+A árvore é fácil de visualizar, e cada entidade é um nó.
+O heap pode ser usado para priorizar elementos com base em suas chaves.
+Heap Máximo (Max Heap):
+No heap máximo, o nó raiz contém o maior valor.
+Cada nó pai tem um valor maior ou igual aos seus filhos.
+É útil para ordenação decrescente.
+Por exemplo, se tivermos os números 12, 8, 4, 2 e 1, o heap máximo terá o 12 no topo.
+Heap Mínimo (Min Heap):
+No heap mínimo, o nó raiz contém o menor valor.
+Cada nó pai tem um valor menor ou igual aos seus filhos.
+É útil para ordenação crescente.
+Por exemplo, se tivermos os mesmos números (12, 8, 4, 2 e 1), o heap mínimo terá o 1 no topo.
+
+
+para criar uma arvore sao necessarios 3 passos:
+1. criar a arvore
+2. inserir elementos
+3. remover elementos
+
+para criar a arvore do heap:
+1. criar a arvore
+
+sendo a criancao em C:
+typedef struct heap{
+    int *dados;
+    int tamanho;
+    int capacidade;
+}heap;
+
+heap *criar_heap(int capacidade){
+    heap *h = (heap*)malloc(sizeof(heap));
+    h->dados = (int*)malloc(capacidade * sizeof(int));
+    h->tamanho = 0;
+    h->capacidade = capacidade;
+    return h;
+}
+
+UMA STRUCT para criar a arvore do heap
+e uma outra struct 
