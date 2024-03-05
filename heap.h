@@ -22,7 +22,6 @@ struct heap
 typedef struct heap Heap;
 
 
-
 Processo* criarHeap(int tamanhoMaximo); //Cria um heap vazio com o tamanho máximo especificado.
 //Implemente um Heap Máximo para organizar os processos por prioridade de execução.
 void inserirProcesso(Processo* heap, int* tamanhoAtual, Processo novoProcesso); //maximo
@@ -30,6 +29,7 @@ void inserirProcesso(Processo* heap, int* tamanhoAtual, Processo novoProcesso); 
 void inserirProcessoPorTempoEspera(Processo* heap, int* tamanhoAtual, Processo novoProcesso); //minimo
 
 
+void remocaominmax(Processo *heap, int *tamanhoAtual, Processo *heap2, int *tamanhoAtual2); //funcao para remover o minimo do heap minimo e o maximo do heap maximo
 void removerProcessoTopoMax(Processo *heap, int *tamanhoAtual); //Remove o processo com maior prioridade ou menor tempo de espera do heap.
 void removerProcessoTopoMin(Processo *heap, int *tamanhoAtual); //Remove o processo com maior prioridade ou menor tempo de espera do heap.
 int heapVazio(int tamanhoAtual); //Retorna 1 se o heap estiver vazio, caso contrário retorna 0.

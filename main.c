@@ -31,6 +31,7 @@ int main(){
         printf("7- Imprimir processos do heap maximo\n");
         printf("8- Imprimir processos do heap minimo\n");
         printf("9- Entrada de processos\n");
+        printf("10- Remover processo do heap\n");
         printf("0- Sair\n");
         scanf("%d", &opcao);
         switch (opcao)
@@ -92,6 +93,11 @@ int main(){
             printf("Entre com a quantidade de processos: ");
             scanf("%d", &n);
             entradaProcesso(heapMaximo, &tamanhoAtualMaximo, heapMinimo, &tamanhoAtualMinimo, n);
+            dot(heapMaximo, tamanhoAtualMaximo, heapMinimo, tamanhoAtualMinimo);
+            break;
+        case 10:
+        system("clear");
+            remocaominmax(heapMaximo, &tamanhoAtualMaximo, heapMinimo, &tamanhoAtualMinimo);
             dot(heapMaximo, tamanhoAtualMaximo, heapMinimo, tamanhoAtualMinimo);
             break;
         case 0:

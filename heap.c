@@ -104,7 +104,6 @@ void removerProcessoTopoMin(Processo *heap, int *tamanhoAtual) //Remove o proces
     }
 }
 
-
 int heapVazio(int tamanhoAtual)
 {
     if (tamanhoAtual == 0) //se o tamanho do heap for 0
@@ -117,15 +116,12 @@ int heapVazio(int tamanhoAtual)
     }
 }
 
-void imprimirProcessos(Processo *heap, int tamanho)
-{
+void imprimirProcessos(Processo *heap, int tamanho){ //imprime como vetor ordenado
     int i;
-    for (i = 0; i < tamanho; i++) //para cada processo no heap
-    {
-        printf("PID: %d, Prioridade: %d, Tempo de Espera: %d\n", heap[i].pid, heap[i].prioridade, heap[i].tempoEspera); //imprime o processo
-        //quantiade de vezes que passa pelo for
-       // printf("Quantidade de vezes que passa pelo for: %d\n", i+1);
+    for(i = 0; i < tamanho; i++){
+        printf("PID: %d | Prioridade: %d | Tempo de Espera: %d\n", heap[i].pid, heap[i].prioridade, heap[i].tempoEspera);
     }
+
 }
 
 void entradaProcesso(Processo *heapMax, int* tamanhoAtualMax, Processo *heapMin, int* tamanhoAtualMin, int n) {
@@ -146,6 +142,12 @@ void entradaProcesso(Processo *heapMax, int* tamanhoAtualMax, Processo *heapMin,
         inserirProcesso(heapMax, tamanhoAtualMax, novoProcessoMax); // Insere no heap máximo
         inserirProcessoPorTempoEspera(heapMin, tamanhoAtualMin, novoProcessoMin); // Insere no heap mínimo
     }
+}
+
+//funcao que remove ao mesmo tempo o topo de min e max
+void remocaominmax(Processo *heap, int *tamanhoAtual, Processo *heap2, int *tamanhoAtual2){
+    removerProcessoTopoMax(heap, tamanhoAtual);
+    removerProcessoTopoMin(heap2, tamanhoAtual2);
 }
 
 
